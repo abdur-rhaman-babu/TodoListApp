@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ height:100vh;
+}
+
+.mainTodo{
+  background-color:#ffffff;
+  padding:10px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.updateInput{
+  width:205px;
+}
+
+.submitTodo input{
+  width:250px;
+  padding: 1px 0;
+  border:none;
+  outline:none;
+  background-color:#f5f6fa;
+}
+.submitTodo button{
+  padding: 1px 0;
+  border:none;
+  background-color:#fff;
+  background-color:rgb(8, 189, 8);
+}
+
+.todoStyle{
+  justify-content:space-between;
+  margin-top:5px;
+}
+
+.todoStyleLeft{
+  display:flex;
+  gap:5px;
+}
+
+
+.singleTodo{
+  width:200px;
+}
