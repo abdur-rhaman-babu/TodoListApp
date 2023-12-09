@@ -8,11 +8,15 @@ const NewTodos = () => {
     const todoListHandaler = (e)=>{
         e.preventDefault()
 
+        if(todo.trim() === ''){
+         return todo
+        }
+
         const newTodos ={
             id:Date.now(),
             task:todo
         }
-
+        
         setTodo('')
         dispatch({type:'ADD_TODO', payload:newTodos})
     }
@@ -20,8 +24,8 @@ const NewTodos = () => {
     return (
         <div className="submitTodo">
             <form onSubmit={todoListHandaler}>
-            <input type="text" required
-            value={todo}
+            <input type="text" 
+            value={todo} required
             onChange={(e)=>setTodo(e.target.value)} 
             placeholder="Enter your task" /> 
             <button type="submit">Add Todo</button>

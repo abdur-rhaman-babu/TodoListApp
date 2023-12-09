@@ -13,6 +13,7 @@ export const  reducer = (state,action)=>{
             ...state,
             todos:[...state.todos, action.payload]
         }
+        
         case 'DELETE_TODO':
         const filterTodo = state.todos.filter((todo)=>todo.id !==action.payload)
         
