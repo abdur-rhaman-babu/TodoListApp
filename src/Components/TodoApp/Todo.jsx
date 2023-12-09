@@ -2,6 +2,10 @@
 
 import { useState } from "react";
 import useUserContext from "../Hook/UseUserContext";
+import { AiFillDelete } from "react-icons/ai";
+import { FaSave } from "react-icons/fa";
+import { FaEdit } from "react-icons/fa";
+
 
 const Todo = ({ todo, edit: { isEdit, setIsEdit } }) => {
   const { dispatch } = useUserContext();
@@ -28,12 +32,12 @@ const Todo = ({ todo, edit: { isEdit, setIsEdit } }) => {
   return (
     <div style={{ display: "flex",alignItems:'center' }} className="todoStyle">
       <div className="todoStyleLeft">
-        <input
+      {isEdit === id ? null : <input
           type="checkbox"
           onChange={(e) => setComplete(e.target.checked)}
           checked={complete}
-        />
-
+         />}
+      
         <div
           style={{
             textDecoration: complete && "line-through",
@@ -48,7 +52,10 @@ const Todo = ({ todo, edit: { isEdit, setIsEdit } }) => {
             />
           ) : (
             <div className="singleTodo">
-              <li style={{ listStyle: "none", textAlign: "left",wordWrap:'break-word' }}>{task}</li>
+            
+              <li style={{ listStyle: "none", textAlign: "left", }}>
+                {task}</li>
+    
             </div>
           )}
         </div>
@@ -57,13 +64,19 @@ const Todo = ({ todo, edit: { isEdit, setIsEdit } }) => {
       <div
         style={{ display: "flex", justifyContent: "space-between", gap: "5px" }}
       >
-        <button onClick={isEdit === id ? updateTodoHandaler : editTodoHandaler}>
-          {isEdit === id ? "Save" : "Edit"}
-        </button>
-        <button onClick={() => deleteTodo(id)}>Delete</button>
+        <i onClick={isEdit === id ? updateTodoHandaler : editTodoHandaler}>
+          {isEdit === id ? <FaSave /> : complete ? null:<FaEdit /> }
+         
+        </i>
+        <i onClick={() => deleteTodo(id)}>
+        {isEdit === id ? null : <AiFillDelete />}
+        
+        </i>
       </div>
     </div>
   );
 };
 
 export default Todo;
+
+
