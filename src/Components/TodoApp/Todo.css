@@ -9,12 +9,14 @@
   align-items: center;
   justify-content: center;
  height:100vh;
+ background-color:#82ccdd;
 }
 
 .mainTodo{
+  width:512px;
   background-color:#ffffff;
   padding:10px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
 
@@ -37,6 +39,11 @@
   align-items:center;
   gap:2px;
   font-weight:700;
+  cursor: pointer;
+}
+.submitTodo button:hover{
+  background-color:#079992;
+  transition:0.3s;
 }
 
 .todoStyle{
@@ -74,4 +81,76 @@
 
 .sub-logo{
   font-size:20px;
+  cursor: pointer;
+}
+
+.heading-task{
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+}
+
+.heading-task h2{
+  font-weight:700;
+  font-family: sans-serif;
+}
+
+
+/* repnsibve */
+@media screen and (max-width: 992px) {
+  .submitTodo input{
+    width:90%;
+  }
+
+  .mainTodo{
+    width:85%;
+  }
+
+  .submitTodo button{
+    padding: 5px 3px;
+    font-size:10px;
+  }
+ 
+  .updateInput{
+    width:590px;
+    outline: none;
+  }
+  
+  .heading-task h2{
+    font-size:20px;
+  }
+
+  .sub-logo{
+    font-size:20px;
+  }
+}
+
+
+@media screen and (max-width:768px) {
+  .submitTodo input{
+    width:80%;
+  }
+
+  .mainTodo{
+    width:92%;
+  }
+
+  .submitTodo button{
+    padding: 5px 3px;
+    font-size:10px;
+  }
+ 
+  .updateInput{
+    width:270px;
+    padding:1px 2px;
+    outline: none;
+  }
+  
+  .heading-task h2{
+    font-size:20px;
+  }
+
+  .sub-logo{
+    font-size:15px;
+  }
 }

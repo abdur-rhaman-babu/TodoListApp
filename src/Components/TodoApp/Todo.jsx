@@ -42,7 +42,7 @@ const Todo = ({ todo, edit: { isEdit, setIsEdit } }) => {
         <div
           style={{
             textDecoration: complete && "line-through",
-            color: complete && "#16FF00",
+            color: complete && "#eb2f06",
           }}
         >
           {isEdit === id ? (
@@ -66,7 +66,8 @@ const Todo = ({ todo, edit: { isEdit, setIsEdit } }) => {
           {isEdit === id ? <FaSave style={{color:'#227093'}} className="sub-logo" /> : complete ? null:<FaEdit className="sub-logo"/> }   
         </i>
 
-        <i className="btn_danger" onClick={() => deleteTodo(id)}>
+        <i className="btn_danger" 
+        onClick={() => deleteTodo(id)}>
         {isEdit === id ? null : <RiDeleteBack2Fill className="sub-logo"/>}
         </i>
       </div>

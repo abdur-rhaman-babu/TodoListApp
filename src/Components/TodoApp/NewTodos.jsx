@@ -1,7 +1,8 @@
 import { useState } from "react";
 import useUserContext from "../Hook/UseUserContext";
 import { IoIosAddCircle } from "react-icons/io";
-
+import { RiTodoLine } from "react-icons/ri";
+import { RiCalendarTodoFill } from "react-icons/ri";
 
 const NewTodos = () => {
     const {dispatch} = useUserContext()
@@ -24,7 +25,11 @@ const NewTodos = () => {
 
     return (
         <>
+        <div className="heading-task">
+        <RiTodoLine />
         <h2 style={{textAlign:"center",marginBottom:'10px'}}>Task App</h2>
+        <RiCalendarTodoFill />
+        </div>
         <div className="submitTodo">
             <form onSubmit={todoListHandaler} >
             

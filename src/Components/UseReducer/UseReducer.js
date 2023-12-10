@@ -14,12 +14,21 @@ export const  reducer = (state,action)=>{
             todos:[action.payload, ...state.todos]
         }
         
+        // delete todo
         case 'DELETE_TODO':
         const filterTodo = state.todos.filter((todo)=>todo.id !==action.payload)
         
         return {
             ...state,
             todos:filterTodo
+        }
+
+        // complete todo
+        case 'COMPLETE_TODO':
+        const completeTodo = state.todos.map((todo)=>todo.id ===action.payload)
+        return {
+            ...state,
+            todos:completeTodo
         }
 
         // Update_todo
