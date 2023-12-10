@@ -17,14 +17,11 @@ const Todos = () => {
     return (
         <section>
             <div className="mainContent">
-            <ol>
             {
                 state.todos &&
                 state.todos.map((todo)=><Todo key={todo.id} todo={todo}
                 edit={{isEdit, setIsEdit}}/>)
             }
-            </ol>
-           
             </div>
         </section>
         

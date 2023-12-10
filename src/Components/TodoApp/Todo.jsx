@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import useUserContext from "../Hook/UseUserContext";
-import { AiFillDelete } from "react-icons/ai";
 import { FaSave } from "react-icons/fa";
 import { FaEdit } from "react-icons/fa";
+import { RiDeleteBack2Fill } from "react-icons/ri";
 
 
 const Todo = ({ todo, edit: { isEdit, setIsEdit } }) => {
@@ -30,6 +30,7 @@ const Todo = ({ todo, edit: { isEdit, setIsEdit } }) => {
   };
 
   return (
+    <>
     <div style={{ display: "flex",alignItems:'center' }} className="todoStyle">
       <div className="todoStyleLeft">
       {isEdit === id ? null : <input
@@ -41,7 +42,7 @@ const Todo = ({ todo, edit: { isEdit, setIsEdit } }) => {
         <div
           style={{
             textDecoration: complete && "line-through",
-            color: complete && "red",
+            color: complete && "#16FF00",
           }}
         >
           {isEdit === id ? (
@@ -52,28 +53,25 @@ const Todo = ({ todo, edit: { isEdit, setIsEdit } }) => {
             />
           ) : (
             <div className="singleTodo">
-            
-              <li style={{ listStyle: "none", textAlign: "left", }}>
-                {task}</li>
-    
+              <li> {task}</li>
             </div>
           )}
         </div>
       </div>
-
       <div
         style={{ display: "flex", justifyContent: "space-between", gap: "5px" }}
       >
-        <i onClick={isEdit === id ? updateTodoHandaler : editTodoHandaler}>
+        <i className="edit-btn" onClick={isEdit === id ? updateTodoHandaler : editTodoHandaler}>
           {isEdit === id ? <FaSave /> : complete ? null:<FaEdit /> }
          
         </i>
-        <i onClick={() => deleteTodo(id)}>
-        {isEdit === id ? null : <AiFillDelete />}
-        
+        <i className="btn_danger" onClick={() => deleteTodo(id)}>
+        {isEdit === id ? null : <RiDeleteBack2Fill />}
         </i>
       </div>
-    </div>
+    </div>    
+    </>
+
   );
 };
 

@@ -14,26 +14,33 @@
 .mainTodo{
   background-color:#ffffff;
   padding:10px;
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
 .updateInput{
   width:205px;
 }
 
+.submitTodo form{
+  display:flex;
+}
 .submitTodo input{
   width:250px;
-  padding: 1px 0;
+  padding: 5px 2px;
   border:none;
   outline:none;
   background-color:#f5f6fa;
 }
 .submitTodo button{
-  padding: 1px 0;
+  padding: 5px 5px;
   border:none;
-  background-color:#fff;
-  background-color:rgb(8, 189, 8);
+  background-color:#29ADB2;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  gap:2px;
 }
+
 
 .todoStyle{
   justify-content:space-between;
@@ -46,6 +53,17 @@
 }
 
 
-.singleTodo{
-  width:200px;
+.singleTodo li{
+  list-style: none;
+  text-align:left;
+  font-family:sans-serif;
+  font-weight:700;
+}
+
+.btn_danger{
+  color:#EF4040;
+}
+
+.edit-btn{
+  color:#FFA732;
 }

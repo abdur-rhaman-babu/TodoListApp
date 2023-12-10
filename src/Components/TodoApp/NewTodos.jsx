@@ -1,5 +1,7 @@
 import { useState } from "react";
 import useUserContext from "../Hook/UseUserContext";
+import { IoIosAddCircle } from "react-icons/io";
+
 
 const NewTodos = () => {
     const {dispatch} = useUserContext()
@@ -16,19 +18,22 @@ const NewTodos = () => {
             id:Date.now(),
             task:todo
         }
-        
         setTodo('')
         dispatch({type:'ADD_TODO', payload:newTodos})
     }
 
     return (
         <div className="submitTodo">
-            <form onSubmit={todoListHandaler}>
+            <form onSubmit={todoListHandaler} >
+            
             <input type="text" 
             value={todo} required
             onChange={(e)=>setTodo(e.target.value)} 
             placeholder="Enter your task" /> 
-            <button type="submit">Add Todo</button>
+
+            <div className="submit-btn">
+            <button type="submit"><IoIosAddCircle />Add Task</button>
+            </div>
             </form>
         </div>
     );
