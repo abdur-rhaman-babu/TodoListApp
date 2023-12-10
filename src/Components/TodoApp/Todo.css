@@ -17,16 +17,13 @@
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
-.updateInput{
-  width:205px;
-}
 
 .submitTodo form{
   display:flex;
 }
 .submitTodo input{
-  width:250px;
-  padding: 5px 2px;
+  width:400px;
+  padding: 0 5px;
   border:none;
   outline:none;
   background-color:#f5f6fa;
@@ -39,8 +36,8 @@
   display:flex;
   align-items:center;
   gap:2px;
+  font-weight:700;
 }
-
 
 .todoStyle{
   justify-content:space-between;
@@ -60,10 +57,21 @@
   font-weight:700;
 }
 
+
 .btn_danger{
   color:#EF4040;
 }
 
 .edit-btn{
-  color:#FFA732;
+  color:#079992;
+}
+
+.updateInput{
+  width:385px;
+  padding:5px 5px;
+  outline: none;
+}
+
+.sub-logo{
+  font-size:20px;
 }

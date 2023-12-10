@@ -23,6 +23,8 @@ const NewTodos = () => {
     }
 
     return (
+        <>
+        <h2 style={{textAlign:"center",marginBottom:'10px'}}>Task App</h2>
         <div className="submitTodo">
             <form onSubmit={todoListHandaler} >
             
@@ -32,10 +34,12 @@ const NewTodos = () => {
             placeholder="Enter your task" /> 
 
             <div className="submit-btn">
-            <button type="submit"><IoIosAddCircle />Add Task</button>
+            <button type="submit"><IoIosAddCircle className="sub-logo" />Add Task</button>
             </div>
             </form>
         </div>
+
+        </>
     );
 };
 

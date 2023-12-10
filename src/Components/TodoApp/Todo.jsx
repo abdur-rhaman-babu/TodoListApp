@@ -61,12 +61,13 @@ const Todo = ({ todo, edit: { isEdit, setIsEdit } }) => {
       <div
         style={{ display: "flex", justifyContent: "space-between", gap: "5px" }}
       >
+
         <i className="edit-btn" onClick={isEdit === id ? updateTodoHandaler : editTodoHandaler}>
-          {isEdit === id ? <FaSave /> : complete ? null:<FaEdit /> }
-         
+          {isEdit === id ? <FaSave style={{color:'#227093'}} className="sub-logo" /> : complete ? null:<FaEdit className="sub-logo"/> }   
         </i>
+
         <i className="btn_danger" onClick={() => deleteTodo(id)}>
-        {isEdit === id ? null : <RiDeleteBack2Fill />}
+        {isEdit === id ? null : <RiDeleteBack2Fill className="sub-logo"/>}
         </i>
       </div>
     </div>    
