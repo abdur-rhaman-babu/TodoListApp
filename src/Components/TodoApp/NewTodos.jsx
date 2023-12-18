@@ -13,6 +13,7 @@ const NewTodos = () => {
 
 
         if(todo.trim() === ''){
+            alert('write something')
          return todo
         }
 
