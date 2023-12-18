@@ -13,6 +13,15 @@ export const  reducer = (state,action)=>{
             ...state,
             todos:[action.payload, ...state.todos]
         }
+
+           // delete todo
+           case 'COMPLETE_TODO':
+            const completeTodo = state.todos.map((todo)=>todo.id === action.payload)
+            return {
+                ...state,
+                todos: completeTodo
+               
+            }
         
         // delete todo
         case 'DELETE_TODO':
@@ -23,30 +32,22 @@ export const  reducer = (state,action)=>{
             todos:filterTodo
         }
 
-        // complete todo
-        case 'COMPLETE_TODO':
-        const completeTodo = state.todos.map((todo)=>todo.id ===action.payload)
-        return {
-            ...state,
-            todos:completeTodo
-        }
-
         // Update_todo
-        case 'UPDATE_TODO':
-        const updateTodo = state.todos.map((todo)=>{
+        // case 'UPDATE_TODO':
+        // const updateTodo = state.todos.map((todo)=>{
 
-            if(todo.id === action.payload.id){
-                return {
-                    ...todo, task: action.payload.task
-                }
-            }
-            return todo
-        })
+        //     if(todo.id === action.payload.id){
+        //         return {
+        //             ...todo, task: action.payload.task
+        //         }
+        //     }
+        //     return todo
+        // })
 
-        return {
-            ...state,
-            todos:updateTodo
-        }
+        // return {
+        //     ...state,
+        //     todos:updateTodo
+        // }
         default: return state
     }
 }

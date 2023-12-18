@@ -5,22 +5,25 @@ import { RiTodoLine } from "react-icons/ri";
 import { RiCalendarTodoFill } from "react-icons/ri";
 
 const NewTodos = () => {
-    const {dispatch} = useUserContext()
+    const {addTodo} = useUserContext()
     const [todo,setTodo] = useState('')
    
     const todoListHandaler = (e)=>{
         e.preventDefault()
 
+
         if(todo.trim() === ''){
          return todo
         }
 
-        const newTodos ={
+        const newTodo ={
             id:Date.now(),
             task:todo
         }
+
+        addTodo(newTodo)
         setTodo('')
-        dispatch({type:'ADD_TODO', payload:newTodos})
+        // dispatch({type:'ADD_TODO', payload:newTodo})
     }
 
     return (

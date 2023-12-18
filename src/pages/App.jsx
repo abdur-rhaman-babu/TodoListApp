@@ -6,7 +6,6 @@ const App = () => {
   return (
     <UsersProvider>
       <div className="container">
-        
         <div className="mainTodo">
           <NewTodos />
           <Todos />
