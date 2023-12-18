@@ -34,6 +34,7 @@ import { RiDeleteBack2Fill } from "react-icons/ri";
   const updateTodoHandaler = (id) => {
     
     if(updatetext.trim()===''){
+      alert('write text')
       return updatetext
     }
 
